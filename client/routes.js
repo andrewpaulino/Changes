@@ -11,7 +11,7 @@ import {
   RegisterPage,
   SignInPage
 } from './components/pages'
-import UserEntry from './components/user-entry'
+import UserEntry from './components/userEntry/user-entry'
 import allActions from './actions/allActions'
 
 /**
