@@ -18,8 +18,18 @@ const UserSignIn = () => {
   return (
     <div className="signin_page">
       <Container fluid>
-        <Row>
-          <Col lg={6}>
+        <Row className="mt-3">
+          <Col lg={12}>
+            <Col lg={12}>
+              <h3 className="form_header">
+                Sign In for
+                <span id="change_label"> Change </span>
+              </h3>
+            </Col>
+          </Col>
+        </Row>
+        <Row className="py-3">
+          <Col lg={12}>
             <Col lg={12}>
               <span className="label-user-entry">Email Address</span>
             </Col>
@@ -27,7 +37,6 @@ const UserSignIn = () => {
               <InputGroup>
                 <Form.Control
                   type="email"
-                  placeholder="lukeskywalker@email.com"
                   aria-describedby="inputGroupPrepend"
                   name="email"
                   onChange={e => setEmail(e.target.value)}
@@ -38,8 +47,8 @@ const UserSignIn = () => {
           </Col>
         </Row>
 
-        <Row className="py-3">
-          <Col lg={6}>
+        <Row className="pt-1 pb-3">
+          <Col lg={12}>
             <Col lg={12}>
               <span className="label-user-entry">Password</span>
             </Col>
@@ -56,7 +65,7 @@ const UserSignIn = () => {
           </Col>
         </Row>
         <Row>
-          <Col lg={6}>
+          <Col lg={12}>
             <Col lg={12}>
               <Button
                 block={true}

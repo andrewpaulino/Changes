@@ -30,16 +30,66 @@ const UserRegistration = () => {
   return (
     <div className="signup_page">
       <Container fluid>
-        <Row>
+        <Row className="mt-3">
+          <Col lg={12}>
+            <Col lg={12}>
+              <h3 className="form_header">
+                Register for
+                <span id="change_label"> Change </span>
+              </h3>
+            </Col>
+          </Col>
+        </Row>
+
+        <Row noGutters={true} className="py-2">
           <Col lg={6}>
             <Col lg={12}>
-              <span className="label-user-entry">Email Address</span>
+              <span className="label-user-entry-registration">First Name</span>
             </Col>
             <Col lg={12}>
               <InputGroup>
                 <Form.Control
-                  type="email"
-                  placeholder="lukeskywalker@email.com"
+                  type="text"
+                  placeholder="Jane"
+                  aria-describedby="inputGroupPrepend"
+                  name="first_name"
+                  onChange={e => setFirstName(e.target.value)}
+                  value={firstName}
+                />
+              </InputGroup>
+            </Col>
+          </Col>
+          <Col lg={6}>
+            <Col lg={12}>
+              <span className="label-user-entry-registration">Last Name</span>
+            </Col>
+            <Col lg={12}>
+              <InputGroup>
+                <Form.Control
+                  type="text"
+                  placeholder="Doe"
+                  aria-describedby="inputGroupPrepend"
+                  name="last_name"
+                  onChange={e => setLastName(e.target.value)}
+                  value={lastName}
+                />
+              </InputGroup>
+            </Col>
+          </Col>
+        </Row>
+
+        <Row className="py-2">
+          <Col lg={12}>
+            <Col lg={12}>
+              <span className="label-user-entry-registration">
+                Email Address
+              </span>
+            </Col>
+            <Col lg={12}>
+              <InputGroup>
+                <Form.Control
+                  type="text"
+                  placeholder="janedoe@email.com"
                   aria-describedby="inputGroupPrepend"
                   name="email"
                   onChange={e => setEmail(e.target.value)}
@@ -49,79 +99,44 @@ const UserRegistration = () => {
             </Col>
           </Col>
         </Row>
+        <Row>
+          <Col lg={12}>
+            <hr />
+          </Col>
+        </Row>
+
+        <Row className="py-2">
+          <Col lg={12}>
+            <Col lg={12}>
+              <span className="label-user-entry-registration">Password</span>
+            </Col>
+            <Col lg={12}>
+              <InputGroup>
+                <Form.Control
+                  type="password"
+                  aria-describedby="inputGroupPrepend"
+                  name="password"
+                  onChange={e => setPassword(e.target.value)}
+                  value={password}
+                />
+              </InputGroup>
+            </Col>
+          </Col>
+        </Row>
+
+        <Row className="mt-3">
+          <Col lg={12}>
+            <Button
+              block={true}
+              color="primary"
+              variant="brand-primary-submit"
+              onClick={e => handleSubmit(e)}
+            >
+              Join Changes
+            </Button>
+          </Col>
+        </Row>
       </Container>
-      <Form.Row>
-        <Form.Group as={Col} md="4" controlId="validationFormikFirstName">
-          <Form.Label>First Name</Form.Label>
-          <InputGroup>
-            <Form.Control
-              type="text"
-              placeholder="First Name"
-              aria-describedby="inputGroupPrepend"
-              name="firstName"
-              onChange={e => setFirstName(e.target.value)}
-              value={firstName}
-            />
-          </InputGroup>
-        </Form.Group>
-
-        <Form.Group as={Col} md="4" controlId="validationFormikLastName">
-          <Form.Label>Last Name</Form.Label>
-          <InputGroup>
-            <Form.Control
-              type="text"
-              placeholder="Last Name"
-              aria-describedby="inputGroupPrepend"
-              name="lastName"
-              onChange={e => setLastName(e.target.value)}
-              value={lastName}
-            />
-          </InputGroup>
-        </Form.Group>
-
-        <Form.Group as={Col} md="4" controlId="validationFormikUserName">
-          <Form.Label> Username</Form.Label>
-          <InputGroup>
-            <Form.Control
-              type="text"
-              placeholder="Username"
-              aria-describedby="inputGroupPrepend"
-              name="userName"
-              onChange={e => setUserName(e.target.value)}
-              value={userName}
-            />
-          </InputGroup>
-        </Form.Group>
-
-        <Form.Group as={Col} md="4" controlId="validationFormikEmail">
-          <Form.Label> Email</Form.Label>
-          <InputGroup>
-            <Form.Control
-              type="text"
-              placeholder="email"
-              aria-describedby="inputGroupPrepend"
-              name="email"
-              onChange={e => setEmail(e.target.value)}
-              value={email}
-            />
-          </InputGroup>
-        </Form.Group>
-
-        <Form.Group as={Col} md="4" controlId="validationFormik01">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            name="firstName"
-            onChange={e => setPassword(e.target.value)}
-            value={password}
-          />
-          <Form.Control.Feedback tooltip>Looks good!</Form.Control.Feedback>
-        </Form.Group>
-
-        <Button color="primary" onClick={e => handleSubmit(e)}>
-          Start making changes
-        </Button>
-      </Form.Row>
     </div>
   )
 }
