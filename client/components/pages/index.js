@@ -5,7 +5,7 @@
  */
 export {default as HomePage} from './HomePage/homePage'
 export {default as ChangesPage} from './changes-page'
-export {default as PostChangePage} from './post-change-page'
+export {default as PostChangePage} from './PostChangePage/postChangePage'
 export {default as ChangeViewPage} from './change-view-page'
 export {default as SignInPage} from './sign-in-page'
 export {default as RegisterPage} from './register-page'

@@ -76,23 +76,27 @@ router.post('/add/:userId', async (req, res, next) => {
   try {
     const newChange = await Change.create({
       userId: req.params.userId,
-      title: req.body.title,
-      body: req.body.body,
+      title: req.body.storyTitle,
+      body: req.body.storyBody,
+      isAnonymous: req.body.isAnonymous,
+      allowComments: req.body.allowComments,
+      groupSelection: req.body.groupSelection,
       communityId: req.body.communityId
     })
-    const getNewChange = await Change.findOne({
-      where: {
-        id: newChange.id
-      },
-      include: [
-        {model: User},
-        {model: Community},
-        {model: Community, include: [{model: User}]}
-      ],
-      order: [[{model: Comment}, 'createdAt', 'ASC']]
-    })
 
-    res.json(getNewChange)
+    // const getNewChange = await Change.findOne({
+    //   where: {
+    //     id: newChange.id,
+    //   },
+    //   include: [
+    //     {model: User},
+    //     {model: Community},
+    //     {model: Community, include: [{model: User}]},
+    //   ],
+    //   order: [[{model: Comment}, 'createdAt', 'ASC']],
+    // })
+    // console.log(getNewChange)
+    res.json({status: 'works'})
   } catch (error) {
     next(error)
   }

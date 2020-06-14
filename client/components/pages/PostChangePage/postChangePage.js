@@ -17,20 +17,26 @@ const PostChangePage = () => {
   const [isAnonymous, setIsAnonymous] = useState(false)
   const [allowComments, setAllowComments] = useState(false)
   const [groupSelection, setGroupSelection] = useState('')
+  const userId = useSelector(state => state.user.id)
+  const dispatch = useDispatch()
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(
-      storyBody,
-      storyTitle,
-      isAnonymous,
-      allowComments,
-      groupSelection
+
+    dispatch(
+      allActions.postChangePageActions.postNewChangeToDatabase(
+        storyBody,
+        storyTitle,
+        isAnonymous,
+        allowComments,
+        groupSelection,
+        userId
+      )
     )
   }
   return (
     <div className="post_change_page">
       <Container>
-        <Card className="border-t-brand-color mx-auto radiated-card w-100">
+        <Card className=" my-4 border-t-brand-color mx-auto radiated-card w-100">
           <Card.Body>
             <Container>
               <Row noGutters={true} className="mt-3">
