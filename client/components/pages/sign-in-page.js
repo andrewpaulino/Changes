@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import allActions from '../../actions/allActions'
-import {Form, Button, Col, InputGroup} from 'react-bootstrap'
+import {Form, Button, Col, InputGroup, Row, Container} from 'react-bootstrap'
 
 const SignInPage = () => {
   // TODO: Simple two fields (email and password)
@@ -24,36 +24,47 @@ const SignInPage = () => {
 
   return (
     <div className="signin_page">
-      <Form.Row>
-        <Form.Group as={Col} md="4" controlId="validationFormikUsername">
-          <Form.Label>email</Form.Label>
-          <InputGroup>
-            <Form.Control
-              type="text"
-              placeholder="Username"
-              aria-describedby="inputGroupPrepend"
-              name="username"
-              onChange={e => setEmail(e.target.value)}
-              value={email}
-            />
-          </InputGroup>
-        </Form.Group>
-
-        <Form.Group as={Col} md="4" controlId="validationFormik01">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            name="firstName"
-            onChange={e => setPassword(e.target.value)}
-            value={password}
-          />
-          <Form.Control.Feedback tooltip>Looks good!</Form.Control.Feedback>
-        </Form.Group>
-      </Form.Row>
-      <Button color="primary" onClick={e => handleSubmit(e)}>
-        Start making changes
-      </Button>
-      InputGroup
+      <Container fluid>
+        <Row>
+          <Col lg={12}>
+            <span className="label">Email Address</span>
+          </Col>
+          <Col lg={12}>
+            <InputGroup>
+              <Form.Control
+                type="email"
+                placeholder="email"
+                aria-describedby="inputGroupPrepend"
+                name="email"
+                onChange={e => setEmail(e.target.value)}
+                value={email}
+              />
+            </InputGroup>
+          </Col>
+        </Row>
+        <Row className="py-3">
+          <Col lg={12}>
+            <span className="label">Password</span>
+          </Col>
+          <Col lg={12}>
+            <InputGroup>
+              <Form.Control
+                type="password"
+                name="password"
+                onChange={e => setPassword(e.target.value)}
+                value={password}
+              />
+            </InputGroup>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Button block={true} color="primary" onClick={e => handleSubmit(e)}>
+              Sign In
+            </Button>
+          </Col>
+        </Row>
+      </Container>
     </div>
   )
 }
