@@ -11,6 +11,7 @@ import {
   RegisterPage,
   SignInPage
 } from './components/pages'
+import UserEntry from './components/user-entry'
 import allActions from './actions/allActions'
 
 /**
@@ -30,9 +31,10 @@ class Routes extends Component {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/newChange" component={PostChangePage} />
         <Route exact path="/changes" component={ChangesPage} />
+        <Route exact path="/testing" component={UserEntry} />
         <Route path="/change/:changeId" component={ChangeViewPage} />
-        <Route exact path="/register" component={RegisterPage} />
-        <Route exact path="/signIn" component={SignInPage} />
+        {/* <Route exact path="/register" component={RegisterPage} />
+        <Route exact path="/signIn" component={SignInPage} /> */}
 
         {isLoggedIn && (
           <Switch>
