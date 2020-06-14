@@ -36,3 +36,33 @@
 .btn-brand-primary-submit:hover {
   background-color: #d48830 !important;
 }
+
+.form_header {
+  font-weight: bold;
+  color: rgb(105, 103, 103);
+}
+
+#change_label {
+  color: #f4b266;
+}
+
+.or-div {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid rgb(168, 167, 167);
+  line-height: 0.1em;
+  color: rgb(168, 167, 167);
+  margin: 10px 0 20px;
+}
+
+.or-div span {
+  background: #fff;
+  padding: 0 10px;
+}
+
+.label-user-entry-registration {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6d6c6c;
+}
