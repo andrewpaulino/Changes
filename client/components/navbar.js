@@ -3,28 +3,34 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
-
-const Navbar = ({handleClick, isLoggedIn}) => (
+import {Navbar, Button, Form} from 'react-bootstrap'
+import './userEntry/userEntry.css'
+const Nav = ({handleClick, isLoggedIn}) => (
   <div>
-    <h1>CHANGES</h1>
-    <nav>
+    <Navbar bg="transparent">
+      <Navbar.Brand id="brand-header" href="#home">
+        Changes
+      </Navbar.Brand>
+
       {isLoggedIn ? (
-        <div>
-          {/* The navbar will show these links after you log in */}
-          <Link to="/home">Home</Link>
+        <div className="ml-auto">
+          <Form inline>
+            <Button
+              color="primary"
+              variant="brand-primary-submit-on-navbar"
+              onClick={e => handleSubmit(e)}
+            >
+              New Story
+            </Button>
+          </Form>
           <a href="#" onClick={handleClick}>
             Logout
           </a>
         </div>
       ) : (
-        <div>
-          {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
-        </div>
+        ''
       )}
-    </nav>
-    <hr />
+    </Navbar>
   </div>
 )
 
@@ -45,12 +51,12 @@ const mapDispatch = dispatch => {
   }
 }
 
-export default connect(mapState, mapDispatch)(Navbar)
+export default connect(mapState, mapDispatch)(Nav)
 
 /**
  * PROP TYPES
  */
-Navbar.propTypes = {
+Nav.propTypes = {
   handleClick: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired
 }
