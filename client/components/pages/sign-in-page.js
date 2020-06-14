@@ -50,10 +50,10 @@ const SignInPage = () => {
           <Form.Control.Feedback tooltip>Looks good!</Form.Control.Feedback>
         </Form.Group>
       </Form.Row>
-
       <Button color="primary" onClick={e => handleSubmit(e)}>
         Start making changes
       </Button>
+      InputGroup
     </div>
   )
 }
