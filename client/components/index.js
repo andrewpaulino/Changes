@@ -6,3 +6,6 @@
 export {default as Navbar} from './navbar'
 export {default as UserHome} from './user-home'
 export {Login, Signup} from './auth-form'
+// export {ChangesFeed} from './change-feed'
+// export {default as Supporter} from './supporter'
+// export {default as Supporting} from './supporting'

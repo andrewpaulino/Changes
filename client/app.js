@@ -5,11 +5,13 @@ import Routes from './routes'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
-  const isLoggedin = useSelector(state => state.user.id)
+  // const isLoggedin = useSelector(state => state.user.id)
 
   return (
     <div>
-      {isLoggedin ? <Navbar /> : null}
+      <Navbar />
+
+      {/* {isLoggedin ? <Navbar /> : null} */}
       <Routes />
     </div>
   )

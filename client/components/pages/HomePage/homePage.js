@@ -52,16 +52,6 @@ const HomePage = () => {
       </Modal>
 
       <div className={styles.Container}>
-        <div className={styles.Banner}>
-          <div>
-            <h1 className={styles.BannerHeading}>Changes</h1>
-          </div>
-          <div className={styles.BannerLinks}>
-            <a onClick={e => handleShow('login')}>Login</a>
-            {' / '}
-            <a onClick={e => handleShow('register')}>Register</a>
-          </div>
-        </div>
         <div className={styles.CTAContainer}>
           <div>
             <h2 className={styles.CTAHeader}>Silence is not the answer</h2>

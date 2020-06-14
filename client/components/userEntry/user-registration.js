@@ -14,12 +14,13 @@ const UserRegistration = () => {
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    setUserName(firstName + lastName)
+
+    const user = `${firstName}230i2${lastName}`
     dispatch(
       allActions.userActions.signUpauth(
         firstName,
         lastName,
-        userName,
+        user,
         email,
         password,
         'signUp'
