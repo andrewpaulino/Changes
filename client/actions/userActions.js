@@ -30,7 +30,7 @@ const auth = (email, password, method) => async dispatch => {
 
   try {
     dispatch(getUser(res.data))
-    history.push('/home')
+    history.push('/newChange')
   } catch (dispatchOrHistoryErr) {
     console.error(dispatchOrHistoryErr)
   }
@@ -59,7 +59,7 @@ const signUpauth = (
 
   try {
     dispatch(getUser(res.data))
-    history.push('/home')
+    history.push('/newChange')
   } catch (dispatchOrHistoryErr) {
     console.error(dispatchOrHistoryErr)
   }

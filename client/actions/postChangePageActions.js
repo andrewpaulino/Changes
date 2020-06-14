@@ -32,7 +32,7 @@ const postNewChangeToDatabase = (
       groupSelection
     })
     if (res.status === 200) {
-      history.push('/ChangeFeed')
+      history.push('/home')
     }
   } catch (authError) {
     console.log(authError)
